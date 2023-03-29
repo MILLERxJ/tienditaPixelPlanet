@@ -6,7 +6,7 @@ export function Menu(){
         <>
             <nav class="navbar navbar-expand-lg navbar-dark menu fixed-top">
                 <div class="container-fluid">
-                <Link class="navbar-brand" to="/">Navbar</Link>
+                <Link class="navbar-brand" to="/">Inicio</Link>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
@@ -17,6 +17,9 @@ export function Menu(){
                     </li>
                     <li class="nav-item">
                         <Link class="nav-link" to="/administrar">Agregar Productos</Link>
+                    </li>
+                    <li class="nav-item">
+                        <Link class="nav-link" to="/productos">Tienda</Link>
                     </li>
                 </ul>
                 </div>
