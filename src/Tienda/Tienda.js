@@ -1,13 +1,24 @@
 import { Link } from "react-router-dom"
+import './Tienda.css'
+import '../AmpliarInfo/AmpliarInfo'
+import { AmpliarInfo } from "../AmpliarInfo/AmpliarInfo"
 
 export function Tienda() {
+    function cambiarFoto(evento) {
+        evento.preventDefault()
+        evento.target.classList.remove("sombra")
+    }
+    function cambiarFoto2(evento) {
+        evento.preventDefault()
+        evento.target.classList.add("sombra")
+    }
     let productos = [
         {
             nombre: "DARK SOULS I",
             precio: 120000,
             descripcion: "Es un RPG de acción, que se caracteriza por una atmósfera oscura y una dificultad muy por encima de los estándares actuales, el primero de una gran saga de FROM SOFTWARE.",
             foto: "https://firebasestorage.googleapis.com/v0/b/tiendadejuancho-a1ef3.appspot.com/o/producto1.jpg?alt=media&token=6a1e2137-0e70-41a7-93a8-79e3325c78ca",
-            link: "https://darksouls.fandom.com/es/wiki/Dark_Souls"
+            link: "/compras"
         },
         {
             nombre: "DARK SOULS II",
@@ -79,13 +90,20 @@ export function Tienda() {
                 {
                     productos.map(function (producto) {
                         return (
-                            <div class="col">
+                            <div class="col zoom">
                                 <div class="card shadow h-100 border-5 border-primary rounded">
-                                    <img src={producto.foto} alt="foto" class="img-fluid"/>
+                                    <img 
+                                    src={producto.foto} 
+                                    alt="foto" 
+                                    class="img-fluid sombra" 
+                                    onMouseOver={cambiarFoto} 
+                                    onMouseLeave={cambiarFoto2} 
+                                    />
                                     <h2 class="text-center fw-bold text-black">{producto.nombre}</h2>
                                     <h4 class="text-justify p-2 text-black">{producto.descripcion}</h4>
                                     <h4 class="text-success text-center">{producto.precio}$ COP</h4>
                                     <Link to={producto.link} class="text-center btn btn-primary m-3 rounded-5" target="_blank">Leer mas</Link>
+                                    <Link to={producto.link} class="text-center btn btn-primary m-3 rounded-5" target="_blank">Comprar</Link>
                                 </div>
                             </div>
                         )
