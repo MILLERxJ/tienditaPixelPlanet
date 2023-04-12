@@ -1,4 +1,42 @@
+import { useState } from "react"
+
 export function Administrador() {
+    const[nombre, setNombre] = useState("")
+    const[foto, setFoto] = useState("")
+    const[descripcion, setDescripcion] = useState("")
+    const[cantidad, setCantidad] = useState("")
+    const[peso, setPeso] = useState("")
+    const[volumen, setVolumen] = useState("")
+    const[precio, setPrecio] = useState("")
+    const[clasificacion, setClasificacion] = useState("")
+    const[marca, setMarca] = useState("")
+    const[presentacion, setPresentacion] = useState("")
+    const[descuento, setDescuento] = useState("")
+    const[fechaingreso, setFechaIngreso] = useState("")
+    const[fechavencimiento, setFechaVencimiento] = useState("")
+    const[proveedor, setProveedor] = useState("")
+
+    function procesarFormulario(evento){
+        evento.preventDefault()
+        let datosProducto={
+            "nombre": nombre,
+            "foto": foto,
+            "descripcion":descripcion,
+            "cantidad":cantidad,
+            "peso":peso,
+            "volumen":volumen,
+            "precio":precio,
+            "clasificacion":clasificacion,
+            "marca":marca,
+            "presentacion":presentacion,
+            "descuento":descuento,
+            "fecha Ingreso":fechaingreso,
+            "fecha Vencimiento":fechavencimiento,
+            "proveedor":proveedor
+        }
+        console.log(datosProducto)
+    }
+
     return (
         <>
             <br></br>
@@ -12,91 +50,206 @@ export function Administrador() {
                 </div>
                 <div class="col-4 text-center">
                     <h2>Registro de mercancia</h2>
-                    <form>
+                    <form onSubmit={procesarFormulario}>
                         <div class="row">
                             <div class="col-5">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-type"/></span>
-                                    <input type="text" class="form-control" placeholder="Nombre" />
+                                    <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    placeholder="Nombre" 
+                                    id="nombre"
+                                    onChange={(evento)=>{
+                                        setNombre(evento.target.value)
+                                    }}
+                                    />
                                 </div>
                             </div>
                             <div class="col-5">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-file-earmark-image" /></span>
-                                    <input type="text" class="form-control" placeholder="Foto" />
+                                    <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    placeholder="Foto" 
+                                    id="foto"
+                                    onChange={(evento)=>{
+                                        setFoto(evento.target.value)
+                                    }}
+                                    />
                                 </div>
                             </div>
                             <div class="col-10">
                                 <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
-                                        <label for="floatingInput">Descripción</label>
+                                    <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="descripcion" 
+                                    placeholder="Descripcion"
+                                    onChange={(evento)=>{
+                                        setDescripcion(evento.target.value)
+                                    }}
+                                    />
+                                    <label for="floatingInput">Descripción</label>
                                 </div>
                             </div>
                             <div class="col-5">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-123" /></span>
-                                    <input type="number" class="form-control" placeholder="Cantidad" />
+                                    <input 
+                                    type="number" 
+                                    class="form-control" 
+                                    placeholder="Cantidad" 
+                                    id="cantidad"
+                                    onChange={(evento)=>{
+                                        setCantidad(evento.target.value)
+                                    }}
+                                    />
                                 </div>
                             </div>
                             <div class="col-5">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-123"/></span>
-                                    <input type="number" class="form-control" placeholder="Peso" />
+                                    <input 
+                                    type="number" 
+                                    class="form-control" 
+                                    placeholder="Peso" 
+                                    id="peso"
+                                    onChange={(evento)=>{
+                                        setPeso(evento.target.value)
+                                    }}
+                                    />
                                 </div>
                             </div>
                             <div class="col-5">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-123"/></span>
-                                    <input type="number" class="form-control" placeholder="Volumen" />
+                                    <input 
+                                    type="number" 
+                                    class="form-control" 
+                                    placeholder="Volumen" 
+                                    id="volumen"
+                                    onChange={(evento)=>{
+                                        setVolumen(evento.target.value)
+                                    }}
+                                    />
                                 </div>
                             </div>
                             <div class="col-5">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-tag-fill"/></span>
-                                    <input type="number" class="form-control" placeholder="Precio" />
+                                    <input 
+                                    type="number" 
+                                    class="form-control" 
+                                    placeholder="Precio" 
+                                    id="precio"
+                                    onChange={(evento)=>{
+                                        setPrecio(evento.target.value)
+                                    }}
+                                    />
                                 </div>
                             </div>
                             <div class="col-5">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-card-list"/></span>
-                                    <input type="text" class="form-control" placeholder="Clasificación" />
+                                    <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    placeholder="Clasificación" 
+                                    id="clasificacion"
+                                    onChange={(evento)=>{
+                                        setClasificacion(evento.target.value)
+                                    }}
+                                    />
                                 </div>
                             </div>
                             <div class="col-5">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-bookmark" /></span>
-                                    <input type="text" class="form-control" placeholder="Marca" />
+                                    <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    placeholder="Marca" 
+                                    id="marca"
+                                    onChange={(evento)=>{
+                                        setMarca(evento.target.value)
+                                    }}
+                                    />
                                 </div>
                             </div>
                             <div class="col-5">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-file-ppt" /></span>
-                                    <input type="text" class="form-control" placeholder="Presentación" />
+                                    <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    placeholder="Presentación" 
+                                    id="presentacion"
+                                    onChange={(evento)=>{
+                                        setPresentacion(evento.target.value)
+                                    }}
+                                    />
                                 </div>
                             </div>
                             <div class="col-5">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-percent"/></span>
-                                    <input type="text" class="form-control" placeholder="Descuento" />
+                                    <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    placeholder="Descuento" 
+                                    id="descuento"
+                                    onChange={(evento)=>{
+                                        setDescuento(evento.target.value)
+                                    }}
+                                    />
                                 </div>
                             </div>
                             <div class="col-5">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-calendar-date" /></span>
-                                    <input type="text" class="form-control" placeholder="FechaIn" />
+                                    <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    placeholder="FechaIn" 
+                                    id="fechaingreso"
+                                    onChange={(evento)=>{
+                                        setFechaIngreso(evento.target.value)
+                                    }}
+                                    />
                                 </div>
                             </div>
                             <div class="col-5">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-calendar-date" /></span>
-                                    <input type="text" class="form-control" placeholder="FechaVen" />
+                                    <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    placeholder="FechaVen" 
+                                    id="fechavencimiento"
+                                    onChange={(evento)=>{
+                                        setFechaVencimiento(evento.target.value)
+                                    }}
+                                    />
                                 </div>
                             </div>
                             <div class="col-10">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-shop"></i></span>
-                                    <input type="text" class="form-control" placeholder="Proveedor" />
+                                    <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    placeholder="Proveedor" 
+                                    id="proveedor"
+                                    onChange={(evento)=>{
+                                        setProveedor(evento.target.value)
+                                    }}
+                                    />
                                 </div>
+                            </div>
+                            <div>
+                            <button type="submit" class="btn btn-outline-success w-100">Success</button>
                             </div>
                         </div>
                     </form>

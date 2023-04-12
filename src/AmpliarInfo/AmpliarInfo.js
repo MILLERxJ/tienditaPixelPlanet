@@ -1,7 +1,10 @@
 import './AmpliarInfo.css'
+import { useLocation } from 'react-router-dom'
 
 export function AmpliarInfo() {
 
+    let location = useLocation()
+    let producto = location.state.producto
     return (
         <>
             <br></br>
@@ -11,12 +14,12 @@ export function AmpliarInfo() {
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <img
-                            src="https://firebasestorage.googleapis.com/v0/b/tiendadejuancho-a1ef3.appspot.com/o/producto1.jpg?alt=media&token=6a1e2137-0e70-41a7-93a8-79e3325c78ca"
+                            src={producto.foto}
                             class="img-fluid w-100"
                             alt="Foto" />
                     </div>
                     <div class="col-12 col-md-6 border p-3 rounded shadow">
-                        <h2 class="fw-blood">Dark souls</h2>
+                        <h2 class="fw-blood">{producto.nombre}</h2>
                         <i class="bi bi-star-fill text-warning fs-1 ms-1"></i>
                         <i class="bi bi-star-fill text-warning fs-1 ms-1"></i>
                         <i class="bi bi-star-fill text-warning fs-1 ms-1"></i>
@@ -26,7 +29,7 @@ export function AmpliarInfo() {
                         <span class="badge text-bg-warning mt-3">Mas vendido</span>
                         <br></br>
                         <br></br>
-                        <h2>180.000$</h2>
+                        <h2>{producto.precio}</h2>
                         <br></br>   
                         <span class="badge text-bg-primary mt-3">Oferton super mega especial</span>
                         <br></br>
@@ -43,7 +46,8 @@ export function AmpliarInfo() {
                         />
                         <br></br>
                         <i class="bi bi-truck display-1 my-5"></i>
-                        <p>Entregas en Medellín y Valle del Aburrá</p>
+                        <h5>{producto.descripcion}</h5><br></br>
+                        <h6>Entregas en Medellín y Valle del Aburrá</h6>
                         <br></br>
                         <br></br>
                         <form>
