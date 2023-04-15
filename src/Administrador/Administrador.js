@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { registrarProductoEnBD } from "../services/agregarProductos"
 
 export function Administrador() {
     const[nombre, setNombre] = useState("")
@@ -20,23 +21,27 @@ export function Administrador() {
         evento.preventDefault()
         let datosProducto={
             "nombre": nombre,
+            "cantidad":cantidad,
             "foto": foto,
             "descripcion":descripcion,
-            "cantidad":cantidad,
             "peso":peso,
             "volumen":volumen,
-            "precio":precio,
+            "precioUnitario":precio,
             "clasificacion":clasificacion,
             "marca":marca,
             "presentacion":presentacion,
-            "descuento":descuento,
-            "fecha Ingreso":fechaingreso,
-            "fecha Vencimiento":fechavencimiento,
+            "aplicaDescuento":descuento,
+            "fechaIngreso":fechaingreso,
+            "fechaVencimiento":fechavencimiento,
             "proveedor":proveedor
         }
         console.log(datosProducto)
+        registrarProductoEnBD(datosProducto)
+        .then(function(respuesta){
+            console.log(respuesta)
+        })
     }
-
+    
     return (
         <>
             <br></br>
@@ -86,7 +91,7 @@ export function Administrador() {
                                     type="text" 
                                     class="form-control" 
                                     id="descripcion" 
-                                    placeholder="Descripcion"
+                                    placeholder="Descripcion|   "
                                     onChange={(evento)=>{
                                         setDescripcion(evento.target.value)
                                     }}
