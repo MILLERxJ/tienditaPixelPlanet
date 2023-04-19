@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2'
 import { useState, useEffect } from "react"
 import { registrarProductoEnBD } from "../services/agregarProductos"
 
@@ -38,7 +39,18 @@ export function Administrador() {
         console.log(datosProducto)
         registrarProductoEnBD(datosProducto)
         .then(function(respuesta){
-            console.log(respuesta)
+            Swal.fire(
+                'Registro con exito',
+                'Escribenos para ganarte el carro',
+                'Con exito'
+              )
+        }) 
+        .catch(function(error){
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Tuviste algun inconveniente',
+              })
         })
     }
     
