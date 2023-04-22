@@ -8,7 +8,6 @@ export function Administrador() {
     const[descripcion, setDescripcion] = useState("")
     const[cantidad, setCantidad] = useState("")
     const[peso, setPeso] = useState("")
-    const[volumen, setVolumen] = useState("")
     const[precio, setPrecio] = useState("")
     const[clasificacion, setClasificacion] = useState("")
     const[marca, setMarca] = useState("")
@@ -22,12 +21,11 @@ export function Administrador() {
         evento.preventDefault()
         let datosProducto={
             "nombre": nombre,
-            "cantidad":cantidad,
+            "cantidad": cantidad,
             "foto": foto,
-            "descripcion":descripcion,
-            "peso":peso,
-            "volumen":volumen,
-            "precioUnitario":precio,
+            "descripcion": descripcion,
+            "peso": peso,
+            "precioUnitario": precio,
             "clasificacion":clasificacion,
             "marca":marca,
             "presentacion":presentacion,
@@ -97,20 +95,6 @@ export function Administrador() {
                                     />
                                 </div>
                             </div>
-                            <div class="col-10">
-                                <div class="form-floating mb-3">
-                                    <input 
-                                    type="text" 
-                                    class="form-control" 
-                                    id="descripcion" 
-                                    placeholder="Descripcion|   "
-                                    onChange={(evento)=>{
-                                        setDescripcion(evento.target.value)
-                                    }}
-                                    />
-                                    <label for="floatingInput">Descripción</label>
-                                </div>
-                            </div>
                             <div class="col-5">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-123" /></span>
@@ -139,20 +123,7 @@ export function Administrador() {
                                     />
                                 </div>
                             </div>
-                            <div class="col-5">
-                                <div class="input-group mb-3">
-                                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-123"/></span>
-                                    <input 
-                                    type="number" 
-                                    class="form-control" 
-                                    placeholder="Volumen" 
-                                    id="volumen"
-                                    onChange={(evento)=>{
-                                        setVolumen(evento.target.value)
-                                    }}
-                                    />
-                                </div>
-                            </div>
+                    
                             <div class="col-5">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-tag-fill"/></span>
@@ -251,7 +222,7 @@ export function Administrador() {
                                     />
                                 </div>
                             </div>
-                            <div class="col-10">
+                            <div class="col-5">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-shop"></i></span>
                                     <input 
