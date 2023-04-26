@@ -44,6 +44,7 @@ export function Tienda() {
         return (
             <>
                 <div class="row row-cols-1 row-cols-md-4 g-3 my-5 p-5">
+                    {console.log(productostienda)}
                     {
                         productostienda.map(function (producto) {
                             return (
@@ -58,7 +59,7 @@ export function Tienda() {
                                         />
                                         <h2 class="text-center fw-bold text-black">{producto.nombre}</h2>
                                         <h4 class="text-justify p-2 text-black">{producto.descripcion}</h4>
-                                        <h4 class="text-success text-center">{producto.precio}$ COP</h4>
+                                        <h4 class="text-success text-center">{producto.precioUnitario}$ COP</h4>
                                         <Link to={producto.link} class="text-center btn btn-primary m-3 rounded-5" target="_blank">Leer mas</Link>
                                         <Link to={producto.link} class="text-center btn btn-primary m-3 rounded-5" target="_blank">Comprar</Link>
                                     </div>

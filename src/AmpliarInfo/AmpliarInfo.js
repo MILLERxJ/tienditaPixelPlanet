@@ -29,7 +29,7 @@ export function AmpliarInfo() {
                         <span class="badge text-bg-warning mt-3">Mas vendido</span>
                         <br></br>
                         <br></br>
-                        <h2>{producto.precio}</h2>
+                        <h2>{producto.precioUnitario}$</h2>
                         <br></br>   
                         <span class="badge text-bg-primary mt-3">Oferton super mega especial</span>
                         <br></br>
