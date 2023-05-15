@@ -6,6 +6,7 @@ import { Tienda } from "../Tienda/Tienda"
 import { AmpliarInfo } from "../AmpliarInfo/AmpliarInfo"
 import { QuienSoyYo } from "../QuienSoyYo/QuienSoyYo"
 import { InformacionPersonal } from "../InformacionPersonal/InformacionPersonal"
+import { Cards } from "../SoftwareIII/SoftwareIII"
 
 export function Router(){
     return(
@@ -20,6 +21,7 @@ export function Router(){
             <Route path="/compras" element={<AmpliarInfo/>}/>
             <Route path="/quiensoyyo" element={<QuienSoyYo/>}/>
             <Route path="/informacionpersonal" element={<InformacionPersonal/>}/>
+            <Route path="/softwareclase" element={<Cards/>}/>
         </Routes>
         </>
     )
