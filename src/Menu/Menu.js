@@ -1,7 +1,10 @@
 import './Menu.css'
 import { Link } from "react-router-dom"
-export function Menu() {
 
+
+
+export function Menu()
+ {
     return (
         <>
             <nav class="navbar navbar-expand-lg navbar-dark menu fixed-top">
@@ -26,6 +29,9 @@ export function Menu() {
                             </li>
                             <li class="nav-item">
                                 <Link class="nav-link" to="/informacionpersonal">Acerca De</Link>
+                            </li>
+                            <li class="nav-item">
+                                <Link class="nav-link" to="softwareclase">Clase SoftwareIII</Link>
                             </li>
                         </ul>
                     </div>
